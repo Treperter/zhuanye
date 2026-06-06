@@ -5,6 +5,6 @@
     "serve": "^14.2.3"
   },
   "scripts": {
-    "start": "serve --listen $PORT"
+    "start": "serve -s --listen 3000"
   }
 }
