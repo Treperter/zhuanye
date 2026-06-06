@@ -1,8 +1,5 @@
 {
   "scripts": {
-    "start": "serve -s --listen 3000"
-  },
-  "dependencies": {
-    "serve": "^14.2.3"
+    "start": "python3 -m http.server $PORT --bind 0.0.0.0"
   }
 }
