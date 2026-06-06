@@ -1,11 +1,5 @@
 {
   "build": {
     "builder": "NIXPACKS"
-  },
-  "deploy": {
-    "startCommand": "python3 server.py",
-    "healthcheckPath": "/",
-    "healthcheckTimeout": 10,
-    "restartPolicyType": "ON_FAILURE"
   }
 }
