@@ -7,6 +7,7 @@
 <style>
   /* ========== 全局重置 ========== */
   * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
   body {
     font-family: "PingFang SC", "Hiragino Sans GB", -apple-system, "Microsoft YaHei", sans-serif;
     background:#f5f5f5; color:#1a1a2e; line-height:1.8; font-size:15px;
@@ -75,10 +76,11 @@
   .toc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:6px; }
   .toc-item {
     display:flex; align-items:center; gap:12px; padding:12px 16px; border-radius:10px;
-    font-size:15px; color:#334155; transition:all .2s; cursor:pointer;
+    font-size:15px; color:#334155; transition:all .2s; cursor:pointer; text-decoration:none;
     break-inside:avoid; page-break-inside:avoid;
   }
   .toc-item:hover { background:#f0f4ff; transform:translateX(4px); }
+  .toc-item:visited { color:#334155; }
   .toc-num {
     width:32px; height:32px; border-radius:8px; display:flex; align-items:center;
     justify-content:center; font-size:13px; font-weight:800; color:#fff; flex-shrink:0;
@@ -225,19 +227,19 @@
 <div class="toc container" id="toc">
   <h2>📑 目录 · 13 个学科门类</h2>
   <div class="toc-grid">
-    <div class="toc-item"><div class="toc-num" style="background:#6366f1;">01</div><div class="toc-name">哲学</div><div class="toc-tag">1 类 · 5 专业</div></div>
-    <div class="toc-item"><div class="toc-num" style="background:#16a34a;">02</div><div class="toc-name">经济学</div><div class="toc-tag">4 类 · 23 专业</div></div>
-    <div class="toc-item"><div class="toc-num" style="background:#2563eb;">03</div><div class="toc-name">法学</div><div class="toc-tag">6 类 · ~45 专业 ⭐</div></div>
-    <div class="toc-item"><div class="toc-num" style="background:#ec4899;">04</div><div class="toc-name">教育学</div><div class="toc-tag">2 类 · ~25 专业</div></div>
-    <div class="toc-item"><div class="toc-num" style="background:#8b5cf6;">05</div><div class="toc-name">文学</div><div class="toc-tag">3 类 · ~120 专业 ⭐</div></div>
-    <div class="toc-item"><div class="toc-num" style="background:#f59e0b;">06</div><div class="toc-name">历史学</div><div class="toc-tag">1 类 · 7 专业</div></div>
-    <div class="toc-item"><div class="toc-num" style="background:#06b6d4;">07</div><div class="toc-name">理学</div><div class="toc-tag">12 类 · ~55 专业 ☢️</div></div>
-    <div class="toc-item"><div class="toc-num" style="background:#10b981;">08</div><div class="toc-name">工学</div><div class="toc-tag">31 类 · 250+ 专业 ⭐</div></div>
-    <div class="toc-item"><div class="toc-num" style="background:#84cc16;">09</div><div class="toc-name">农学</div><div class="toc-tag">7 类 · ~43 专业</div></div>
-    <div class="toc-item"><div class="toc-num" style="background:#ef4444;">10</div><div class="toc-name">医学</div><div class="toc-tag">11 类 · ~60 专业 🏥</div></div>
-    <div class="toc-item"><div class="toc-num" style="background:#64748b;">11</div><div class="toc-name">管理学</div><div class="toc-tag">9 类 · ~80 专业</div></div>
-    <div class="toc-item"><div class="toc-num" style="background:#d946ef;">12</div><div class="toc-name">艺术学</div><div class="toc-tag">5 类 · ~62 专业</div></div>
-    <div class="toc-item"><div class="toc-num" style="background:#14b8a6;">13</div><div class="toc-name">交叉学科</div><div class="toc-tag">新增 · 待观察</div></div>
+    <a href="#sec-01" class="toc-item"><div class="toc-num" style="background:#6366f1;">01</div><div class="toc-name">哲学</div><div class="toc-tag">1 类 · 5 专业</div></a>
+    <a href="#sec-02" class="toc-item"><div class="toc-num" style="background:#16a34a;">02</div><div class="toc-name">经济学</div><div class="toc-tag">4 类 · 23 专业</div></a>
+    <a href="#sec-03" class="toc-item"><div class="toc-num" style="background:#2563eb;">03</div><div class="toc-name">法学</div><div class="toc-tag">6 类 · ~45 专业 ⭐</div></a>
+    <a href="#sec-04" class="toc-item"><div class="toc-num" style="background:#ec4899;">04</div><div class="toc-name">教育学</div><div class="toc-tag">2 类 · ~25 专业</div></a>
+    <a href="#sec-05" class="toc-item"><div class="toc-num" style="background:#8b5cf6;">05</div><div class="toc-name">文学</div><div class="toc-tag">3 类 · ~120 专业 ⭐</div></a>
+    <a href="#sec-06" class="toc-item"><div class="toc-num" style="background:#f59e0b;">06</div><div class="toc-name">历史学</div><div class="toc-tag">1 类 · 7 专业</div></a>
+    <a href="#sec-07" class="toc-item"><div class="toc-num" style="background:#06b6d4;">07</div><div class="toc-name">理学</div><div class="toc-tag">12 类 · ~55 专业 ☢️</div></a>
+    <a href="#sec-08" class="toc-item"><div class="toc-num" style="background:#10b981;">08</div><div class="toc-name">工学</div><div class="toc-tag">31 类 · 250+ 专业 ⭐</div></a>
+    <a href="#sec-09" class="toc-item"><div class="toc-num" style="background:#84cc16;">09</div><div class="toc-name">农学</div><div class="toc-tag">7 类 · ~43 专业</div></a>
+    <a href="#sec-10" class="toc-item"><div class="toc-num" style="background:#ef4444;">10</div><div class="toc-name">医学</div><div class="toc-tag">11 类 · ~60 专业 🏥</div></a>
+    <a href="#sec-11" class="toc-item"><div class="toc-num" style="background:#64748b;">11</div><div class="toc-name">管理学</div><div class="toc-tag">9 类 · ~80 专业</div></a>
+    <a href="#sec-12" class="toc-item"><div class="toc-num" style="background:#d946ef;">12</div><div class="toc-name">艺术学</div><div class="toc-tag">5 类 · ~62 专业</div></a>
+    <a href="#sec-13" class="toc-item"><div class="toc-num" style="background:#14b8a6;">13</div><div class="toc-name">交叉学科</div><div class="toc-tag">新增 · 待观察</div></a>
   </div>
 </div>
 
@@ -248,7 +250,7 @@
 <!-- ================================================================
      01 哲学门类
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-01">
   <div class="sec-header">
     <div class="sec-icon" style="background:#ede9fe;">📖</div>
     <div class="sec-title">一、哲学门类</div>
@@ -314,7 +316,7 @@
 <!-- ================================================================
      02 经济学门类
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-02">
   <div class="sec-header">
     <div class="sec-icon" style="background:#dcfce7;">💰</div>
     <div class="sec-title">二、经济学门类</div>
@@ -522,7 +524,7 @@
 <!-- ================================================================
      03 法学门类
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-03">
   <div class="sec-header">
     <div class="sec-icon" style="background:#dbeafe;">⚖️</div>
     <div class="sec-title">三、法学门类</div>
@@ -690,7 +692,7 @@
 <!-- ================================================================
      04 教育学门类
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-04">
   <div class="sec-header">
     <div class="sec-icon" style="background:#fce7f3;">🎓</div>
     <div class="sec-title">四、教育学门类</div>
@@ -771,7 +773,7 @@
 <!-- ================================================================
      05 文学门类
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-05">
   <div class="sec-header">
     <div class="sec-icon" style="background:#ede9fe;">✍️</div>
     <div class="sec-title">五、文学门类</div>
@@ -899,7 +901,7 @@
 <!-- ================================================================
      06 历史学门类
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-06">
   <div class="sec-header">
     <div class="sec-icon" style="background:#fef3c7;">📜</div>
     <div class="sec-title">六、历史学门类</div>
@@ -955,7 +957,7 @@
 <!-- ================================================================
      07 理学门类（天坑集中营）
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-07">
   <div class="sec-header">
     <div class="sec-icon" style="background:#cffafe;">🔬</div>
     <div class="sec-title">七、理学门类</div>
@@ -1149,7 +1151,7 @@
 <!-- ================================================================
      08 工学门类（上半部分）
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-08">
   <div class="sec-header">
     <div class="sec-icon" style="background:#dcfce7;">⚙️</div>
     <div class="sec-title">八、工学门类</div>
@@ -1595,7 +1597,7 @@
 <!-- ================================================================
      09 农学门类
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-09">
   <div class="sec-header">
     <div class="sec-icon" style="background:#dcfce7;">🌾</div>
     <div class="sec-title">九、农学门类</div>
@@ -1659,7 +1661,7 @@
 <!-- ================================================================
      10 医学门类
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-10">
   <div class="sec-header">
     <div class="sec-icon" style="background:#fecdd3;">🏥</div>
     <div class="sec-title">十、医学门类</div>
@@ -1889,7 +1891,7 @@
 <!-- ================================================================
      11 管理学门类
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-11">
   <div class="sec-header">
     <div class="sec-icon" style="background:#e0e7ff;">📊</div>
     <div class="sec-title">十一、管理学门类</div>
@@ -2028,7 +2030,7 @@
 <!-- ================================================================
      12 艺术学门类
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-12">
   <div class="sec-header">
     <div class="sec-icon" style="background:#fae8ff;">🎨</div>
     <div class="sec-title">十二、艺术学门类</div>
@@ -2130,7 +2132,7 @@
 <!-- ================================================================
      13 交叉学科门类
 ================================================================ -->
-<div class="section">
+<div class="section" id="sec-13">
   <div class="sec-header">
     <div class="sec-icon" style="background:#ccfbf1;">🔬</div>
     <div class="sec-title">十三、交叉学科门类</div>
