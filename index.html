@@ -195,7 +195,12 @@
     .cover h1 { font-size:32px; letter-spacing:3px; }
     .toc-grid { grid-template-columns:1fr; }
     .section { padding:24px 18px; }
-    .major-tag { width:70px; min-width:70px; font-size:11px; }
+    .major-tag {
+      width:auto; min-width:65px; font-size:12px;
+      flex-direction:row; gap:3px; padding:10px 8px;
+    }
+    .tag-icon { font-size:14px; }
+    .tag-text { font-size:10.5px; white-space:nowrap; }
     .major-body { padding:10px 12px; }
   }
 </style>
